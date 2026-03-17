@@ -1,0 +1,58 @@
+.howitworks {
+	padding-block: 96px;
+	background-color: $gray2;
+
+	@media screen and (max-width: 768px) {
+		padding-block: 64px;
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 32px;
+
+		@media screen and (max-width: 1024px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+		@media screen and (max-width: 768px) {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+		}
+
+		.howitworks__card {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 24px;
+			text-align: center;
+			box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+			border-radius: 8px;
+			background-color: $white;
+
+			span {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 64px;
+				height: 64px;
+				margin-bottom: 16px;
+				background-color: $orange2;
+				border-radius: 50%;
+				color: $white;
+				font-size: 24px;
+				font-weight: 700;
+				line-height: 32px;
+			}
+
+			.howitworks__card_title {
+				margin-bottom: 8px;
+				font-size: 20px;
+				font-weight: 600;
+				line-height: 28px;
+			}// /.benefits__card_title
+
+			.howitworks__card_text {
+				color: $black3;
+			}
+		}// /.benefits__card
+	}// /.howitworks__cards
+}

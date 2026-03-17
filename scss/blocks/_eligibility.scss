@@ -1,0 +1,125 @@
+.eligibility {
+	padding-block: 96px;
+	color: $white;
+	background-color: $black2;
+
+	@media screen and (max-width: 768px) {
+		padding-block: 64px;
+	}
+
+	&__title {
+		color: $yellow;
+	}
+
+	.eligibility__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 48px;
+
+		@media screen and (max-width: 768px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+
+		&_left {
+			padding: 32px;
+			box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+			background-color: $black3;
+			border-radius: 8px;
+
+			.eligibility__content_title {
+				margin-bottom: 24px;
+				font-size: 24px;
+				font-weight: 600;
+				line-height: 32px;
+			}
+
+			.eligibility__form {
+				display: flex;
+				flex-direction: column;
+				row-gap: 24px;
+				width: 100%;
+
+				&_item {
+					display: flex;
+					flex-direction: column;
+					row-gap: 4px;
+
+					label {
+						color: $gray;
+						font-size: 14px;
+						font-weight: 500;
+						line-height: 20px;
+					}
+					
+					input,
+					textarea {
+						padding: 12px;
+						background-color: $gray4;
+						border: 1px solid $gray5;
+						border-radius: 6px;
+						color: $white;
+
+						&::placeholder {
+							color: $gray6;
+						}
+					}
+
+					textarea {
+						min-height: 90px;
+						resize: vertical;
+					}
+				}// /.item
+
+				.eligibility__form_submit {
+					width: 100%;
+					padding-inline: 24px;
+					border-radius: 6px;
+				}
+			}// /.eligibility__form
+		}// /.eligibility__content_left
+
+		&_right {
+			padding: 32px;
+			box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+			background-color: $black3;
+			border-radius: 8px;
+			align-self: start;
+
+			@media screen and (max-width: 576px) {
+				padding: 16px;
+			}
+
+			.eligibility__content_contacts {
+				display: flex;
+				flex-direction: column;
+				row-gap: 16px;
+
+				.eligibility__contacts_item {
+					display: flex;
+					align-items: center;
+					column-gap: 12px;
+					color: $gray;
+
+					.material-symbols-outlined {
+						width: 24px;
+						height: 24px;
+						color: $yellow;
+					}
+
+					.eligibility__contacts_phone,
+					.eligibility__contacts_mail {
+						color: $white;
+
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}// /.eligibility__contacts_item
+
+				.eligibility__bottom_text {
+					color: $gray6;
+				}
+			}// /.eligibility__content_contacts
+		}// /.eligibility__content_right
+	}// /.eligibility__content
+}

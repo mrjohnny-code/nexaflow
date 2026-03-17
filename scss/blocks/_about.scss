@@ -1,0 +1,142 @@
+.about {
+	padding-block: 96px;
+
+	@media screen and (max-width: 768px) {
+		padding-block: 64px;
+	}
+
+	&__content {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 48px;
+
+		@media screen and (max-width: 1024px) {
+			display: block;
+		}
+
+		&_left {
+			align-self: center;
+			color: $black3;
+			font-size: 18px;
+			line-height: 28px;
+
+			@media screen and (max-width: 1024px) {
+				margin-bottom: 48px;
+			}
+			
+			p {
+				margin-bottom: 24px;
+
+				&.strong {
+					margin-bottom: 0;
+					font-weight: 600;
+				}
+			}
+		}// /.left
+
+		&_right {
+			padding: 16px;
+			background-color: $gray3;
+			box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+			border-radius: 8px;
+			position: relative;
+			z-index: 1;
+
+			img {
+				width: 100%;
+			}
+
+			.map_pin {
+				position: absolute;
+				z-index: 1;
+				cursor: pointer;
+
+				&:hover {
+					z-index: 2;
+
+					.map__tooltip {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+
+				&[data-loc="ontario"] {
+					top: 20%;
+					left: 30%;
+
+					.map__tooltip {
+						@media screen and (max-width: 576px) {
+							transform: translateX(calc(-50% + 40px));
+						}
+					}
+				}
+				&[data-loc="quebec"] {
+					top: 25%;
+					left: 60%;
+
+					.map__tooltip {
+						@media screen and (max-width: 576px) {
+							transform: translateX(calc(-50% - 30px));
+						}
+					}
+				}
+				&[data-loc="british"] {
+					top: 40%;
+					left: 15%;
+					
+					.map__tooltip {
+						@media screen and (max-width: 576px) {
+							transform: translateX(calc(-50% + 60px));
+						}
+					}
+				}
+				&[data-loc="alberta"] {
+					top: 30%;
+					left: 45%;
+				}
+
+				.material-symbols-outlined {
+					width: 36px;
+					height: 40px;
+					color: $red;
+					font-size: 36px;
+					line-height: 40px;
+				}
+
+				.map__tooltip {
+					width: 256px;
+					padding: 16px;
+					box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+					background-color: $white;
+					border: 1px solid $yellow3;
+					border-radius: 8px;
+					position: absolute;
+					bottom: 100%;
+					left: 50%;
+					transform: translateX(-50%);
+					z-index: 2;
+					opacity: 0;
+					visibility: hidden;
+					transition: opacity $transition, visibility $transition;
+					pointer-events: none;
+
+					@media screen and (max-width: 576px) {
+						bottom: auto;
+						top: 100%;
+					}
+
+					&_title {
+						margin-bottom: 4px;
+						color: $orange3;
+					}
+
+					&_text {
+						color: $black3;
+						font-size: 14px;
+						line-height: 20px;
+					}
+				}
+			}
+		}
+	}// /.about__content
+}
