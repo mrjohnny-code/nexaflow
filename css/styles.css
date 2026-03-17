@@ -297,7 +297,7 @@ h6 {
 
 .hero {
   padding-block: clamp(96px, 12.5vw, 160px);
-  background-image: url("/img/main.jpg");
+  background-image: url("../img/main.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
